@@ -1,57 +1,38 @@
-import React, { useState } from "react";
-import { View, Text, Button, ScrollView, StyleSheet, Alert } from "react-native";
-
-export default function App() {
-  const [count, setCount] = useState(0);
-
-  const createPlan = () => {
-    // Buraya daha sonra gerçek plan oluşturma mantığını ekleriz
-    Alert.alert("BesPlan", "Plan oluşturuldu (örnek) ✅");
-  };
-
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>BesPlan – Hızlı Önizleme</Text>
-
-      <View style={styles.card}>
-        <Text style={styles.sectionTitle}>Durum</Text>
-        <Text>Bu ekran, Expo Go’da hızlı test için tek dosyalık örnektir.</Text>
-      </View>
-
-      <View style={styles.card}>
-        <Text style={styles.sectionTitle}>Plan İşlemleri</Text>
-        <Button title="Plan Oluştur" onPress={createPlan} />
-      </View>
-
-      <View style={styles.card}>
-        <Text style={styles.sectionTitle}>Sayaç (Örnek State)</Text>
-        <Text style={{ marginBottom: 8 }}>Değer: {count}</Text>
-        <Button title="Arttır" onPress={() => setCount((c) => c + 1)} />
-      </View>
-
-      <Text style={styles.footer}>SDK 54 ile uyumlu basit demo</Text>
-    </ScrollView>
-  );
+{
+  "expo": {
+    "name": "BesPlan",
+    "slug": "besplan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "router": {
+        "origin": "expo"
+      }
+    }
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    paddingTop: 32,
-    gap: 16,
-  },
-  title: { fontSize: 22, fontWeight: "700", textAlign: "center", marginBottom: 8 },
-  sectionTitle: { fontSize: 16, fontWeight: "600", marginBottom: 8 },
-  card: {
-    backgroundColor: "#fff",
-    borderRadius: 12,
-    padding: 16,
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
-    gap: 8,
-  },
-  footer: { textAlign: "center", color: "#666", marginTop: 16 },
-});
