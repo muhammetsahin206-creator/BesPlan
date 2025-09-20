@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "BesPlan",
+    "slug": "besplan",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
+  }
+}
